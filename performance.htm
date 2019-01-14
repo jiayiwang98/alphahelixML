@@ -1,0 +1,68 @@
+<html>
+	
+<head>
+	<title>Performance</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="bluebliss.css"/>
+</head>
+
+<body>
+<div id="mainContentArea">
+	<div id="contentBox">
+        <div id="title">Alpha Helix Predictor</div>
+        
+        <div id="linkGroup">
+            <div class="link"><a href="index.html">Home</a></div>
+            <div class="link"><a href="about.htm">About</a></div>
+			<div class="link"><a href="help.htm">Help</a></div>
+            <div class="link"><a href="performance.htm">Performance</a></div>
+        </div>
+        
+        <div id="blueBox"> 
+          <div id="header"></div>
+          <div class="contentTitle">Performance</div>
+            <div class="pageContent">
+                <h1>Training Data Performance</h1>
+              <p>As mentioned in the <a href="/~jw2295/about.htm">About</a> page, the classifier was trained using a simple random forest classifier on 80% of the provided training data. After test on the remaining 20% of data, an accuracy metric of 0.7805 was generated. Although this accuracy metric seems rather high, the confusion matrix shown below shows that the classifier is much more reliable for predicting if there isn't an alpha helix at a protein than if there is. A corresponding ROC curve with an AUROC value of 0.72 is shown below:</p>
+               
+
+                <table style="width:25%" align="center">
+  <tr>
+    <td>TN = 58974</td>
+          <td>FP = 289</td>
+    
+  </tr>
+  <tr>
+<td>FN = 16292</td> 
+    <td>TP = 108</td> 
+  </tr>
+</table>
+             
+                <p style="text-align:center;"><img src="roc_training.JPG" width=400px></p>
+                
+                
+                <h1>Testing Data Performance</h1>
+			  <p>As for the provided testing data, an accuracy metric of 0.7878 was generated, with the corresponding confusion matric and ROC curve shown below. The AUROC value was only slightly lower than that that of the training data at 0.71, with similar proportions in the confusion matrix, which indicates that there is consistency with the classifier: </p>
+                
+                <table style="width:25%" align="center">
+  <tr>
+    <td>TN = 134243</td>
+      <td>FP = 637</td>
+    
+  </tr>
+  <tr>
+    <td>FN = 35556</td> 
+     
+     <td>TP = 205</td> 
+  </tr>
+</table>
+             
+                <p style="text-align:center;"><img src="roc_testing.JPG" width=400px></p>
+                
+            </div>
+            <div id="footer"><a href="https://www.cornell.edu/">Jia Yi Wang, Cornell University</div>
+        </div>
+	</div>
+</div>
+</body>
+</html>

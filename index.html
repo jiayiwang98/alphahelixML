@@ -1,0 +1,42 @@
+<html>
+	
+<head>
+	<title>Alpha Helix Predictor</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="bluebliss.css"/>
+</head>
+
+<body>
+<div id="mainContentArea">
+	<div id="contentBox">
+        <div id="title">Alpha Helix Predictor</div>
+        
+        <div id="linkGroup">
+            <div class="link"><a href="index.html">Home</a></div>
+            <div class="link"><a href="about.htm">About</a></div>
+			<div class="link"><a href="help.htm">Help</a></div>
+            <div class="link"><a href="performance.htm">Performance</a></div>
+        </div>
+        
+        <div id="blueBox"> 
+          <div id="header"></div>
+          <div class="contentTitle">Home</div>
+            <div class="pageContent">
+                
+              <p>Enter any valid single UniProt ID into the box below and hit 'Predict'. The output will be a table containing the position, single-letter code, and prediction for each amino acid in the protein sequence. There will also be a tab delimited .txt file of the same table ready for download. </p>
+                  
+              <p>To find UniProt IDs or get some more background, visit the official UniProt website <a href="https://www.uniprot.org/">here</a>.</p>
+                
+              <form method="GET" action="cgi-bin/results.cgi">
+                  <p><b>UniProt ID:</b> <input type="text" name="uni_id">
+                      <input type="submit" value="Predict"> </p>
+                  
+                </form>
+                
+            </div>
+            <div id="footer"><a href="https://www.cornell.edu/">Jia Yi Wang, Cornell University</div>
+        </div>
+	</div>
+</div>
+</body>
+</html>

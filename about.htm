@@ -1,0 +1,56 @@
+<html>
+	
+<head>
+	<title>About</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="bluebliss.css"/>
+</head>
+
+<body>
+<div id="mainContentArea">
+	<div id="contentBox">
+        <div id="title">Alpha Helix Predictor</div>
+        
+        <div id="linkGroup">
+            <div class="link"><a href="index.html">Home</a></div>
+            <div class="link"><a href="about.htm">About</a></div>
+			<div class="link"><a href="help.htm">Help</a></div>
+            <div class="link"><a href="performance.htm">Performance</a></div>
+        </div>
+        
+        <div id="blueBox"> 
+          <div id="header"></div>
+          <div class="contentTitle">About</div>
+            <div class="pageContent">
+              
+              <h1>UniProt ID Processing</h1>
+              <p>The queries are handled through a form on the home page and passed to the results.cgi script. They are then processed with a function that:</p> 
+<ul>
+  <li>Pulls the protein sequence from the official UniProt website.</li>
+  <li>Generates a feature table from the sequence.</li>
+  <li>Predicts the presence of alpha helices with the trained classifier. </li>
+    <li>Creates a tab delimited .txt file with a summary of the results as well as a dataframe that is converted to html format for displaying.</li>
+</ul>                
+              
+              <h1>Generating Features</h1>
+              <p>The features used for the classifier are based on the Expasy amino acid scale for alpha helices, which can be found <a href="https://web.expasy.org/protscale/pscale/alpha-helixFasman.html">here</a>. A total of 14 features were generated from these values - the average Expasy amino acid value and standard deviation of the values for odd-sized windows ranging from 3 to 15 (7 window sizes), with the amino acid in question at the center of the window. </p>
+                <p>The average Expasy AA value for a window was chosen since specific amino acids are found in higher concentrations in alpha helixes, which is indicated in the varying Expasy AA values for the amino acids. The standard deviation was chosen as well because a large standard deviation may indicate that there are too many amino acids in the window that actually inhibit alpha helix formation.</p>
+              
+              <h1>Classifier</h1>
+                
+              <p>The classifier used is a simple random forest classifier. To prevent overfitting, a depth of 10 was chosen. </p>
+              <p>80% of the training data was used to fit the classifier, and the remaining 20% of the training data was set aside to test the performance of the classifier. The 80:20 separation of the training data was performed using a 'randomized' stratified split based on the labels, since the frequency of the alpha helix structures in the protein sequences were lower. Thus, undersampling of amino acids with alpha helix structures was prevented. </p>
+                
+                
+              <h1>Website Design</h1>
+              <p>My goal was to implement a simple and user-friendly website, but I was dissatisfied with the lack of page layout options for html-only websites. I visited various websites with code for simple web pages to learn more about page layout and eventually found a <a href="http://www.bryantsmith.com/template/bluebliss/"> website template</a> that I liked in particular. I tweaked around the .css code for the webpage template for several hours to figure out exactly how the layout was working and altered it so it would be more readable (larger text and blocks) and friendly to the eye. Over the course of developing the website, I also added: hoverable links, table and image formatting, and a friendlier color scheme. </p>
+             <p>Note: the layout was optimized for viewing on screens with a 1920x1080 resolution. </p>
+                
+			  
+			</div>
+            <div id="footer"><a href="https://www.cornell.edu/">Jia Yi Wang, Cornell University</div>
+        </div>
+	</div>
+</div>
+</body>
+</html>
